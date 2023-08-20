@@ -1,0 +1,18 @@
+version: '3'
+services:
+  caiyun-webdav:
+    image: falconchen/caiyun-webdav
+    container_name: falconchen-caiyun-webdav
+    restart: unless-stopped
+    volumes:
+      - /etc/localtime:/etc/localtime
+    ports:
+      - "127.0.0.1:10086:8080"
+    tty: true
+    environment:
+      - TZ=Asia/Shanghai
+      - CAIYUN_TOKEN=${CAIYUN_TOKEN}
+      - CAIYUN_TEL=13714681456
+      - CAIYUN_AUTH_USER_NAME=falcon
+      - CAIYUN_AUTH_PASSWORD=10086
+

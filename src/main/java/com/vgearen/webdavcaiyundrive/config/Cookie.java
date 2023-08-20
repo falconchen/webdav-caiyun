@@ -12,9 +12,7 @@ public class Cookie {
 
     public static String getCookie() {
         StringBuffer stringBuffer = new StringBuffer();
-        stringBuffer.append("ORCHES-C-TOKEN=").append(token).append(";")
-                .append("ORCHES-C-ACCOUNT=").append(account).append(";")
-                .append("ORCHES-I-ACCOUNT-ENCRYPT=").append(encrypt).append(";");
+        stringBuffer.append("authorization=").append(token).append(";");
         return stringBuffer.toString();
     }
 

@@ -54,6 +54,12 @@ public class CaiyunDriverClient {
                 String dateNowStr = sdf.format(new Date());
                 String key = EncryptUtil.getRandomSring(16);
                 Request request = chain.request();
+                
+
+                StringBuffer stringBuffer = new StringBuffer();
+                String authorizationStr = stringBuffer.append("Basic ").append(token).toString();
+        
+
                 String sign = "";
                 if (request.url().url().getHost().equals("yun.139.com")) {
                     sign = EncryptUtil.getNewSign(bodyToString(request), dateNowStr, key);
@@ -72,7 +78,8 @@ public class CaiyunDriverClient {
                             .addHeader("x-DeviceInfo", "||9|85.0.4183.83|chrome|85.0.4183.83|||windows 10||zh-CN|||")
                             .addHeader("x-SvcType", "1")
                             .addHeader("referer", "https://yun.139.com/w/")
-                            .addHeader("Authorization", token)
+                            //.addHeader("Cookie",Cookie.getCookie())
+                            .addHeader("Authorization", authorizationStr)
                             .build();
                 }
                 System.out.println(Cookie.getCookie());

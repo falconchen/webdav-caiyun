@@ -8,6 +8,7 @@
 ## .env 下的 token 
 
 来自 <https://yun.139.com/w/#/index> 下的网络请求 (使用chrome网络面板）`getDisk` 请求Authorization的值，不带Basic
+新版的参考`get_cookie.md`文档
 
 ## 使用方法
 
@@ -106,7 +107,6 @@ services:
 ## TODO
 
 1. 账号密码登录
-
 
 
 

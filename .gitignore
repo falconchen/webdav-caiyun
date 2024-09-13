@@ -35,3 +35,6 @@ build/
 /.mvn/
 /doc/
 /src/main/resources/json/
+
+### logs
+/logs/
